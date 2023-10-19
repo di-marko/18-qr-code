@@ -1,0 +1,15 @@
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+Desktop.ini
+
+# Linux system files
+.directory
+
+# Temporary files and backups
+*.bak
+*.tmp
+*.swp
+node_modules

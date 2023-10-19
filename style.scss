@@ -1,0 +1,126 @@
+// Variables
+$white: #fff;
+$txt-clr: #111;
+$bg: #fafafa;
+$border: 1px solid #41131a;
+
+// Reset and Global Styles
+*, *::after, *::before {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 450px;
+    height: 100vh;
+    margin: 0 auto;
+    color: $white;
+    background-color: $bg;
+}
+
+a {
+    text-decoration: none;
+}
+
+// Form Inputs and Buttons
+input[type="color"], .dimensions {
+    width: 32%;
+    height: 40px;
+    border: $border;
+    border-radius: 2px;
+    color: $txt-clr;
+    background-color: $bg;
+    outline: none;
+}
+
+.qr-txt {
+    display: block;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0.8rem;
+    border: $border;
+    &::placeholder {
+        font-weight: 400;
+        color: #8b92b7;
+    }
+}
+
+// QR Code Styles
+#qr-code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    border: $border;
+    img, canvas {
+        max-width: 100% !important;
+        max-height: 100% !important;
+    }
+}
+
+// Flex Utilities
+.row, .action-container {
+    display: flex;
+    align-items: center;
+}
+
+.row {
+    justify-content: space-between;
+}
+
+.action-container {
+    margin: 1rem 0;
+}
+
+// Button Styles
+.btn {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    max-width: 200px;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 2px;
+    color: $white;
+    background-color: #111;
+    cursor: pointer;
+    img {
+        width: 20px;
+        margin-left: 10px;
+    }
+}
+
+// Media Queries
+@media (max-width: 512px) {
+    body {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    #qr-code {
+        width: 95vw;
+        height: 95vw;
+    }
+
+    #qr-code img, #qr-code canvas {
+        max-width: 95vw !important;
+        max-height: 95vw !important;
+    }
+
+    .btn {
+        min-width: unset;
+    }
+}
+
+@media (max-width: 350px) {
+    .action-container {
+        flex-direction: column;
+    }
+}
